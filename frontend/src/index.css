@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 250 30% 98%;
+    --foreground: 240 20% 20%;
+
+    --card: 250 40% 99%;
+    --card-foreground: 240 20% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 20% 20%;
+
+    --primary: 262 60% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 200 60% 92%;
+    --secondary-foreground: 200 40% 30%;
+
+    --muted: 250 20% 94%;
+    --muted-foreground: 240 10% 50%;
+
+    --accent: 340 60% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 70% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 250 20% 90%;
+    --input: 250 20% 90%;
+    --ring: 262 60% 60%;
+
+    --radius: 1rem;
+
+    /* Custom tokens */
+    --calm-green: 160 50% 55%;
+    --calm-green-foreground: 0 0% 100%;
+    --warm-amber: 35 80% 60%;
+    --warm-amber-foreground: 0 0% 100%;
+    --soft-pink: 340 60% 75%;
+    --soft-blue: 210 60% 70%;
+    --lavender: 262 40% 80%;
+    --peach: 20 80% 85%;
+
+    --gradient-calm: linear-gradient(135deg, hsl(262 60% 60%), hsl(210 60% 70%));
+    --gradient-warm: linear-gradient(135deg, hsl(340 60% 65%), hsl(262 60% 60%));
+    --gradient-serene: linear-gradient(135deg, hsl(200 60% 92%), hsl(262 40% 90%));
+    --gradient-sunset: linear-gradient(135deg, hsl(20 80% 85%), hsl(340 60% 75%));
+
+    --shadow-soft: 0 4px 20px -4px hsl(262 60% 60% / 0.15);
+    --shadow-glow: 0 0 30px -5px hsl(262 60% 60% / 0.25);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .gradient-calm {
+    background: var(--gradient-calm);
+  }
+  .gradient-warm {
+    background: var(--gradient-warm);
+  }
+  .gradient-serene {
+    background: var(--gradient-serene);
+  }
+  .gradient-sunset {
+    background: var(--gradient-sunset);
+  }
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .safe-top {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted));
+  border-radius: 999px;
+}
+
+/* Mobile app feel */
+@media (max-width: 640px) {
+  html {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+  }
+}

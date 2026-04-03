@@ -1,0 +1,14 @@
+# ─── CalmNote Backend Dependencies ────────────────────────────────────────────
+
+# Web framework
+fastapi>=0.111.0
+uvicorn[standard]>=0.29.0
+
+# Database — PostgreSQL
+sqlalchemy>=2.0.30
+psycopg2-binary>=2.9.9          # PostgreSQL driver (binary wheel — no build tools needed)
+python-dotenv>=1.0.1            # .env file support
+
+# Validation
+pydantic>=2.7.1
+python-multipart>=0.0.9         # Required for form data / file uploads
